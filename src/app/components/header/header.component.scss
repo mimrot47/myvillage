@@ -6,3 +6,8 @@
     background-color: #dd0074;
     color: white;
 }
+
+.mat-mdc-unelevated-button.mat-warn {
+    --mdc-filled-button-container-color: #fff896;
+    --mdc-filled-button-label-text-color: rgb(8, 8, 8);
+}

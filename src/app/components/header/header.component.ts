@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { LoginComponent } from '../login/login.component';
+import { SignupComponent } from '../signup/signup.component';
 
 @Component({
   selector: 'app-header',
@@ -7,16 +10,29 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
-  showFiller:boolean=false;
+  constructor(public dailogBox:MatDialog){}
+
+  showFiller:boolean=true;
 
   openFiller(){
-
-    if(this.showFiller)
-    {
-      this.showFiller = false;
-    }else{
-      this.showFiller = true;
-    }
+    this.showFiller? this.showFiller = false:this.showFiller = true;
   }
+
+  openLginDailog(){
+    console.log("clicked on box");
+    const dailogRef = this.dailogBox.open(LoginComponent,
+      {
+        height: "60%",
+        width:"30%"
+      })
+  }
+  openSignupDailog(){
+    const dailogRef = this.dailogBox.open(SignupComponent,
+      {
+        height: "83%",
+        width:"30%"
+      })
+  }
+
 
 }

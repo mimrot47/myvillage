@@ -1,0 +1,28 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.card-footer {
+    // height: 40px;
+    // position: fixed;
+    // bottom: 30%;
+    // width: 100%;
+    // background-color: #393838;
+    // opacity: 1;
+}
+
+mat-form-field {
+    width: 90%;
+    margin-top: 1em;
+    margin-left: 1em;
+}
+
+.login-footer {
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+}
+
+mat-card {
+    height: 100%;
+}

@@ -1,0 +1,39 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Sign Up</mat-card-title>
+        <span class="spacer"></span>
+        <mat-icon (click)="closeSignup()">close</mat-icon>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <form #signup="ngForm" (ngSubmit)="signupData(signup.value)">
+        <mat-form-field appearance="outline">
+            <mat-label>Frist Name</mat-label>
+            <input matInput type="text" placeholder="Enter your Frist name" name="fristName" ngModel>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input matInput type="text" name="lastName" placeholder="Enter your last name" ngModel>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" name="password" placeholder="Enter your password" ngModel>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" type="button">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput [type]="hideConfirm ? 'password' : 'text'" name="passwordConfirm" placeholder="Confirm your password" ngModel>
+            <button mat-icon-button matSuffix (click)="hideConfirm = !hideConfirm" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" type="button">
+              <mat-icon>{{hideConfirm ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+        </mat-form-field>
+        <button mat-flat-button class="sigup-button" color="primary" type="submit">Sign Up</button>
+        <mat-card-footer>
+            <p>Yout you have accoutn login</p>
+        </mat-card-footer>
+
+    </form>
+
+
+</mat-card>
